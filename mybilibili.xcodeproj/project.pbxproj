@@ -84,7 +84,6 @@
 		F9530B551E373A7900F71C60 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9530B481E373A7900F71C60 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		F9530B561E373A7900F71C60 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9530B4A1E373A7900F71C60 /* View+MASAdditions.m */; };
 		F9530B571E373A7900F71C60 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F9530B4D1E373A7900F71C60 /* ViewController+MASAdditions.m */; };
-		F9530B5B1E37425A00F71C60 /* WMDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9530B5A1E37425A00F71C60 /* WMDragView.m */; };
 		F95713F11E36E2350012211B /* SW_CommentDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F95713EF1E36E2350012211B /* SW_CommentDetailsVC.m */; };
 		F95713F21E36E2350012211B /* SW_CommentDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95713F01E36E2350012211B /* SW_CommentDetailsVC.xib */; };
 		F95713FB1E36EBB10012211B /* player_start_btn_hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F95713F41E36EBB10012211B /* player_start_btn_hd@2x.png */; };
@@ -276,8 +275,6 @@
 		F9530B4B1E373A7900F71C60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		F9530B4C1E373A7900F71C60 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		F9530B4D1E373A7900F71C60 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		F9530B591E37425A00F71C60 /* WMDragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDragView.h; sourceTree = "<group>"; };
-		F9530B5A1E37425A00F71C60 /* WMDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDragView.m; sourceTree = "<group>"; };
 		F95713EE1E36E2350012211B /* SW_CommentDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SW_CommentDetailsVC.h; sourceTree = "<group>"; };
 		F95713EF1E36E2350012211B /* SW_CommentDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SW_CommentDetailsVC.m; sourceTree = "<group>"; };
 		F95713F01E36E2350012211B /* SW_CommentDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SW_CommentDetailsVC.xib; sourceTree = "<group>"; };
@@ -548,28 +545,12 @@
 			isa = PBXGroup;
 			children = (
 				263142F81D8AD8080031C59A /* Category(分类) */,
-				269CF1601D84F53300E4D466 /* Const(常量) */,
-				269CF1611D84F53300E4D466 /* DataBase(数据库) */,
 				269CF1621D84F53300E4D466 /* Macros(宏) */,
 				269CF1651D84F53300E4D466 /* Network(网络) */,
 				269CF16F1D84F53300E4D466 /* Tool(工具类) */,
 			);
 			name = "Expand(扩展)";
 			path = "mybilibili/Expand(扩展)";
-			sourceTree = "<group>";
-		};
-		269CF1601D84F53300E4D466 /* Const(常量) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Const(常量)";
-			sourceTree = "<group>";
-		};
-		269CF1611D84F53300E4D466 /* DataBase(数据库) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "DataBase(数据库)";
 			sourceTree = "<group>";
 		};
 		269CF1621D84F53300E4D466 /* Macros(宏) */ = {
@@ -672,7 +653,6 @@
 		269CF2451D84F54300E4D466 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
-				F9530B581E37425A00F71C60 /* WMDragView */,
 				F9530B341E373A7900F71C60 /* Masonry */,
 				F9530B251E37390200F71C60 /* WMPlayer */,
 				F95714481E36FB190012211B /* SWProgressHud */,
@@ -874,15 +854,6 @@
 				F9530B4D1E373A7900F71C60 /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
-			sourceTree = "<group>";
-		};
-		F9530B581E37425A00F71C60 /* WMDragView */ = {
-			isa = PBXGroup;
-			children = (
-				F9530B591E37425A00F71C60 /* WMDragView.h */,
-				F9530B5A1E37425A00F71C60 /* WMDragView.m */,
-			);
-			path = WMDragView;
 			sourceTree = "<group>";
 		};
 		F95713F31E36EBA70012211B /* Resource */ = {
@@ -1156,7 +1127,6 @@
 				269CF2741D84FCE100E4D466 /* MainModel.m in Sources */,
 				269CF1981D84F53300E4D466 /* Common.m in Sources */,
 				F9530B4E1E373A7900F71C60 /* MASCompositeConstraint.m in Sources */,
-				F9530B5B1E37425A00F71C60 /* WMDragView.m in Sources */,
 				262675961D854C8400D092DB /* ZhuifanViewController.m in Sources */,
 				F9530B4F1E373A7900F71C60 /* MASConstraint.m in Sources */,
 				262675871D854B3E00D092DB /* TuijianViewController.m in Sources */,
