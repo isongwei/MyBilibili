@@ -38,7 +38,6 @@
     
     [self addViewControllerString:@"ShouyeViewController" Title:@"首页" SelectImagestr:@"home_home_tab_s" imagestr:@"home_home_tab"];
     [self addViewControllerString:@"FenquViewController" Title:@"分区" SelectImagestr:@"home_category_tab_s" imagestr:@"home_category_tab"];
-    [self addViewControllerString:@"GuanzhuViewController" Title:@"关注" SelectImagestr:@"home_attention_tab_s" imagestr:@"home_attention_tab"];
     [self addViewControllerString:@"FaxianViewController" Title:@"发现" SelectImagestr:@"home_discovery_tab_s" imagestr:@"home_discovery_tab"];
     [self addViewControllerString:@"WodeViewController" Title:@"我的" SelectImagestr:@"home_mine_tab_s" imagestr:@"home_mine_tab"];
     
@@ -49,18 +48,9 @@
 }
 
 -(void)createUI{
-    
-    
-    
     //点击颜色
     self.tabBar.tintColor = [UIColor redColor];
     self.tabBar.barTintColor = [UIColor whiteColor];
-
-    
-    
-    
-    
-    
 }
 
 -(void)addViewControllerString:(NSString *)ctrlName Title:(NSString *)title SelectImagestr:(NSString *)selectImagestr imagestr:(NSString *)imagestr{
