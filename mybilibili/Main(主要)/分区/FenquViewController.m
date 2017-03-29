@@ -10,10 +10,11 @@
 #import "SW_FenquViewCell.h"
 #import "SW_FenquHeaderView.h"
 
+
 @interface FenquViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,weak) IBOutlet UICollectionView * collectionView;
-@property (nonatomic,weak) IBOutlet UIView * headerView;
+@property (nonatomic,strong)  SW_FenquHeaderView * headerView;
 @property (nonatomic,strong) NSMutableArray * dataArray;
 
 
@@ -66,6 +67,8 @@
 #pragma mark - kaishi 
 
 -(void)createUI{
+    _headerView = [[[NSBundle mainBundle]loadNibNamed:@"SW_FenquHeaderView" owner:nil options:nil]firstObject];
+    
     _headerView.frame = CGRectMake(0, -SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_WIDTH);
     [_collectionView addSubview:_headerView];
     _collectionView.contentInset = UIEdgeInsetsMake(SCREEN_WIDTH, 0, 0, 0);
@@ -76,21 +79,19 @@
 
 #pragma mark - UICollectionViewDelegate
 
-- (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:( UICollectionView *)collectionView cellForItemAtIndexPath:( NSIndexPath *)indexPath{
     
     
-    
-    SW_FenquViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SW_FenquViewCell" forIndexPath:indexPath];
-    if (_dataArray.count) {
+    if (collectionView == _collectionView) {
+        SW_FenquViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SW_FenquViewCell" forIndexPath:indexPath];
+        if (_dataArray.count) {
+            
+            
+        }
         
-        NSDictionary * dic =  _dataArray[indexPath.row];
-        
-//        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:(NSString *)dic[@"logo"]]];
-//        cell.title.text = (NSString *)dic[@"name"];
-
+        return cell;
     }
-    
-    return cell;
+    return nil;
 }
 
 
