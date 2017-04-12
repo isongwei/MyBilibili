@@ -41,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"sda";
+    self.title = @"视频播放";
     
     [self initData];
     
@@ -50,6 +50,11 @@
     
     [self requestDataWithParamCode:self.paramCode];
     
+}
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self.view sendSubviewToBack:_videoImage];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -124,11 +129,37 @@
     }
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+//    if (scrollView == _tableView_related) {
+//        if (_tableView_related.contentOffset.y >= 0) {
+//            _contentView_Y.constant = -_contentView_Y.constant > SCREEN_WIDTH/1.8 - 64?-(SCREEN_WIDTH/1.8 - 64):-_tableView_related.contentOffset.y/3;
+//            
+//        }else{
+//            _contentView_Y.constant = 0;
+//        }
+//    }
+    [self viewDidLayoutSubviews];
+
+}
+
+
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    [self.view sendSubviewToBack:_contentView];
-    _tableView_related.frame = CGRectMake(0, 0, SCREEN_WIDTH, -_contentView_Y.constant + SCREEN_HEIGHT - SCREEN_WIDTH/1.8-40);
-    _commentDetailsView.frame =CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, -_contentView_Y.constant + SCREEN_HEIGHT - SCREEN_WIDTH/1.8-40);
+
+    _contentView_Y.constant = -_tableView_related.contentOffset.y/3;
+    if (-_contentView_Y.constant >= SCREEN_WIDTH/1.8 - 64) {
+        _contentView_Y.constant = -SCREEN_WIDTH/1.8 + 64;
+    }
+    
+    if (_contentView_Y.constant >= 0) {
+        _contentView_Y.constant = 0;
+    }
+    
+    
+    _tableView_related.frame = CGRectMake(0, 0, SCREEN_WIDTH, _contentView.frame.size.height-40);
+    _commentDetailsView.frame =CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, _contentView.frame.size.height-40);
     
     
     if (_scrollView.contentOffset.y >= 0) {

@@ -1,9 +1,5 @@
 //
 //  NSString+Date.m
-//  SP2P_6.1
-//
-//  Created by 李小斌 on 14-10-9.
-//  Copyright (c) 2014年 EIMS. All rights reserved.
 //
 
 #import "NSString+Date.h"
@@ -22,14 +18,14 @@
 {
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    return [dateFormatter stringFromDate:[self getLocaleDate]];
+    return [dateFormatter stringFromDate:[NSDate date]];
 }
 
 +(NSString *)getCurrentTime
 {
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    return [dateFormatter stringFromDate:[self getLocaleDate]];
+    return [dateFormatter stringFromDate:[NSDate date]];
 }
 
 
@@ -52,16 +48,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
     return [dateFormat stringFromDate: date];
-    
-}
-
-+(NSDate *)getLocaleDate
-{
-    
-    NSDate *date = [NSDate date];
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate: date];
-    return  [date  dateByAddingTimeInterval: interval];
     
 }
 

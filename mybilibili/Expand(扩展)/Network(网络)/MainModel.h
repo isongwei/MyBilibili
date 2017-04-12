@@ -16,5 +16,8 @@
 @property (nonatomic, assign) NSInteger code;//
 @property (nonatomic, strong) NSString *message;//
 
+#pragma mark - ===============================
+
+
 
 @end

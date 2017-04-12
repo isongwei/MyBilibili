@@ -1,23 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SW_FenquViewCell" id="gTV-IL-0wX" customClass="SW_FenquViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="98" height="88"/>
+            <rect key="frame" x="0.0" y="0.0" width="232" height="192"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="98" height="88"/>
+                <rect key="frame" x="0.0" y="0.0" width="232" height="192"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-nz-dRx" customClass="__UIImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="232" height="145"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zbd-nz-dRx" secondAttribute="height" multiplier="1.6" id="vUC-yy-tTU"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZR-kH-Sm4">
+                        <rect key="frame" x="0.0" y="148" width="232" height="44"/>
+                        <attributedString key="attributedText">
+                            <fragment content="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel">
+                                <attributes>
+                                    <color key="NSColor" red="0.21565999999999999" green="0.2157" blue="0.21565999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                        <tabStops>
+                                            <textTab alignment="left" location="28">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="56">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="84">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="112">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="140">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="168">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="196">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="224">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="252">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="280">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="308">
+                                                <options/>
+                                            </textTab>
+                                            <textTab alignment="left" location="336">
+                                                <options/>
+                                            </textTab>
+                                        </tabStops>
+                                    </paragraphStyle>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player_play_c" translatesAutoresizingMaskIntoConstraints="NO" id="E6L-AZ-u5f">
+                        <rect key="frame" x="10" y="121.5" width="20" height="16.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="E6L-AZ-u5f" secondAttribute="height" multiplier="1.2" id="Y20-8I-zOt"/>
+                            <constraint firstAttribute="width" constant="20" id="hZa-Vi-zsw"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="弹幕量" translatesAutoresizingMaskIntoConstraints="NO" id="6TY-TW-VSX">
+                        <rect key="frame" x="116" y="122.5" width="19" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="cFu-Sj-hIt"/>
+                            <constraint firstAttribute="width" constant="19" id="esp-id-F8v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kej-wl-xh8">
+                        <rect key="frame" x="35" y="123" width="76" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGZ-4Q-cMb">
+                        <rect key="frame" x="140" y="123.5" width="87" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.16191007653061223" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-            <size key="customSize" width="98" height="88"/>
-            <point key="canvasLocation" x="58" y="154"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gGZ-4Q-cMb" secondAttribute="trailing" constant="5" id="5aa-d3-kEK"/>
+                <constraint firstItem="zbd-nz-dRx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D0c-8H-Z14"/>
+                <constraint firstAttribute="bottom" secondItem="OZR-kH-Sm4" secondAttribute="bottom" id="MSZ-7f-Dlj"/>
+                <constraint firstItem="OZR-kH-Sm4" firstAttribute="top" secondItem="zbd-nz-dRx" secondAttribute="bottom" constant="3" id="PFw-xi-es9"/>
+                <constraint firstItem="OZR-kH-Sm4" firstAttribute="top" secondItem="E6L-AZ-u5f" secondAttribute="bottom" constant="10" id="PkG-bU-QXR"/>
+                <constraint firstItem="6TY-TW-VSX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="trailing" multiplier="0.5" id="QVF-az-313"/>
+                <constraint firstItem="kej-wl-xh8" firstAttribute="centerY" secondItem="E6L-AZ-u5f" secondAttribute="centerY" id="Shj-jI-5tf"/>
+                <constraint firstItem="E6L-AZ-u5f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="UgA-Wz-Gnu"/>
+                <constraint firstItem="6TY-TW-VSX" firstAttribute="leading" secondItem="kej-wl-xh8" secondAttribute="trailing" constant="5" id="YwD-12-EF3"/>
+                <constraint firstAttribute="trailing" secondItem="zbd-nz-dRx" secondAttribute="trailing" id="cjJ-hI-r9w"/>
+                <constraint firstItem="6TY-TW-VSX" firstAttribute="centerY" secondItem="E6L-AZ-u5f" secondAttribute="centerY" id="jNg-2e-pw7"/>
+                <constraint firstItem="gGZ-4Q-cMb" firstAttribute="leading" secondItem="6TY-TW-VSX" secondAttribute="trailing" constant="5" id="ldV-5W-FOs"/>
+                <constraint firstItem="zbd-nz-dRx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lky-0M-zzD"/>
+                <constraint firstItem="kej-wl-xh8" firstAttribute="leading" secondItem="E6L-AZ-u5f" secondAttribute="trailing" constant="5" id="lpC-Y3-q1q"/>
+                <constraint firstItem="gGZ-4Q-cMb" firstAttribute="centerY" secondItem="6TY-TW-VSX" secondAttribute="centerY" id="mOS-h6-pY1"/>
+                <constraint firstItem="OZR-kH-Sm4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="odK-gh-267"/>
+                <constraint firstAttribute="trailing" secondItem="OZR-kH-Sm4" secondAttribute="trailing" id="xG6-Py-D0N"/>
+            </constraints>
+            <size key="customSize" width="232" height="192"/>
+            <connections>
+                <outlet property="danmu_count" destination="gGZ-4Q-cMb" id="YOb-Bo-Roz"/>
+                <outlet property="imageV" destination="zbd-nz-dRx" id="bbx-xS-Pky"/>
+                <outlet property="live_count" destination="kej-wl-xh8" id="cxf-84-khK"/>
+                <outlet property="subtitle" destination="OZR-kH-Sm4" id="b1J-gN-Nb3"/>
+            </connections>
+            <point key="canvasLocation" x="-161" y="-50"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="player_play_c" width="56" height="52"/>
+        <image name="弹幕量" width="19" height="15"/>
+    </resources>
 </document>

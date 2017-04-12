@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SW_FenquViewCell : UICollectionViewCell
-
+@property (nonatomic,strong) NSDictionary  * infoDic;
 @end
 
 

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface SW_FenquViewHeaderCell : UICollectionViewCell
+
+@property (nonatomic,strong) NSDictionary * infoDic;
 
 @end
 @interface SW_FenquViewHeaderFlowLayout : UICollectionViewFlowLayout

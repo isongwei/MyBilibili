@@ -12,7 +12,6 @@
 
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
     
-    
     return @{
              
              };

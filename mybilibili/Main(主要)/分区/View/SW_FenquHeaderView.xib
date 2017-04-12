@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="SW_FenquHeaderView" id="5Cf-4E-PqX" userLabel="headerView" customClass="SW_FenquHeaderView">
+        <view contentMode="scaleToFill" id="Qjo-pH-UAj" customClass="SW_FenquHeaderView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-05-f9P">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-kj-R0h">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DAY-Kf-9v4" customClass="SW_FenquViewHeaderFlowLayout">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
+                    <collectionViewLayout key="collectionViewLayout" id="9PJ-yF-6xf" customClass="SW_FenquViewHeaderFlowLayout"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="Jnw-RS-KOa"/>
+                        <outlet property="dataSource" destination="Qjo-pH-UAj" id="suH-y6-viv"/>
+                        <outlet property="delegate" destination="Qjo-pH-UAj" id="Zkw-Pa-VqP"/>
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="0.38679846940000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="bFo-05-f9P" firstAttribute="leading" secondItem="5Cf-4E-PqX" secondAttribute="leading" id="BDc-Mg-Hk7"/>
-                <constraint firstAttribute="trailing" secondItem="bFo-05-f9P" secondAttribute="trailing" id="Vvz-8Q-c52"/>
-                <constraint firstAttribute="bottom" secondItem="bFo-05-f9P" secondAttribute="bottom" id="cVE-Lg-7rD"/>
-                <constraint firstItem="bFo-05-f9P" firstAttribute="top" secondItem="5Cf-4E-PqX" secondAttribute="top" id="tZd-fO-PFg"/>
+                <constraint firstItem="EHb-kj-R0h" firstAttribute="top" secondItem="Qjo-pH-UAj" secondAttribute="top" id="QNH-sT-DDe"/>
+                <constraint firstItem="EHb-kj-R0h" firstAttribute="leading" secondItem="Qjo-pH-UAj" secondAttribute="leading" id="YUf-nb-zW5"/>
+                <constraint firstAttribute="bottom" secondItem="EHb-kj-R0h" secondAttribute="bottom" id="aHe-BO-xQw"/>
+                <constraint firstAttribute="trailing" secondItem="EHb-kj-R0h" secondAttribute="trailing" id="u6e-LT-jB4"/>
             </constraints>
-            <point key="canvasLocation" x="170" y="100"/>
+            <connections>
+                <outlet property="collectionView" destination="EHb-kj-R0h" id="qGX-BG-c9h"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="191"/>
         </view>
     </objects>
 </document>

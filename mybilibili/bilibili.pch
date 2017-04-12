@@ -31,4 +31,6 @@
 #import "SWProgressHUD.h"//hud
 #import "UIImageView+GIF.h"//gif
 
+#import <IJKMediaFramework/IJKMediaFramework.h>
+
 #endif /* bilibili_pch */

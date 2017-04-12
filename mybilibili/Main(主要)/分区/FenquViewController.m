@@ -9,12 +9,14 @@
 #import "FenquViewController.h"
 #import "SW_FenquViewCell.h"
 #import "SW_FenquHeaderView.h"
+#import "SW_FenquHeaderCell.h"
+
 
 
 @interface FenquViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,weak) IBOutlet UICollectionView * collectionView;
-@property (nonatomic,strong)  SW_FenquHeaderView * headerView;
+@property (nonatomic,strong)  SW_FenquHeaderView * headerView;//头
 @property (nonatomic,strong) NSMutableArray * dataArray;
 
 
@@ -28,6 +30,7 @@
     self.title = @"分区";
     self.tabBarItem.title = @"";
     
+    
     [self initData];
     
     [self createUI];
@@ -40,6 +43,11 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 
 -(void)initData{
     
@@ -48,31 +56,32 @@
 
 -(void)requestData{
     
-//    [NetClient GET:fenqu_URL parameter:nil networkError:nil startRequest:nil success:^(id responseObject, NSURLSessionDataTask *dataTask, NetWorkClient *client) {
-//        
-//        
-//        
-//        NSArray * array = responseObject[@"data"];
-//        for (NSDictionary  *dic in array) {
-//            [_dataArray addObject:dic];
-//        }
-//        NSLog(@"%@",_dataArray);
-//        [_collectionView reloadData];
-//        
-//    } failure:^(NSError *error, NSURLSessionDataTask *dataTask, NetWorkClient *client) {
-//        
-//    }];
+    
+    [NetClient GET:fenquAll_URL parameter:nil startRequest:nil success:^(MainModel *MainModel) {
+        NSArray * dataArr = MainModel.data;
+        for (NSDictionary * dic in dataArr) {
+            [_dataArray addObject:dic];
+        }
+        [_collectionView reloadData];
+
+    }failure:^(NSError *error) {
+        
+    }];
     
 }
-#pragma mark - kaishi 
+#pragma mark - kaishi
 
 -(void)createUI{
-    _headerView = [[[NSBundle mainBundle]loadNibNamed:@"SW_FenquHeaderView" owner:nil options:nil]firstObject];
+
+    SW_FenquHeaderView * view = [[[NSBundle mainBundle]loadNibNamed:@"SW_FenquHeaderView" owner:nil options:nil] firstObject];
     
-    _headerView.frame = CGRectMake(0, -SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_WIDTH);
-    [_collectionView addSubview:_headerView];
-    _collectionView.contentInset = UIEdgeInsetsMake(SCREEN_WIDTH, 0, 0, 0);
+    view.frame = CGRectMake(0, -SCREEN_WIDTH/4.0*3.0, SCREEN_WIDTH, SCREEN_WIDTH/4.0*3.0);
+    [_collectionView addSubview:view];
+    
+    
+    _collectionView.contentInset = UIEdgeInsetsMake(SCREEN_WIDTH/4.0*3.0, 0, 0, 0);
     [_collectionView registerNib:[UINib nibWithNibName:@"SW_FenquViewCell" bundle:nil] forCellWithReuseIdentifier:@"SW_FenquViewCell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"SW_FenquHeaderCell" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SW_FenquHeaderCell"];
     
     
 }
@@ -85,27 +94,54 @@
     if (collectionView == _collectionView) {
         SW_FenquViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SW_FenquViewCell" forIndexPath:indexPath];
         if (_dataArray.count) {
-            
-            
+            NSArray * dicArr = _dataArray[indexPath.section][@"body"];
+            indexPath.row < dicArr.count?cell.infoDic = dicArr[indexPath.row]:nil;
+            return cell;
         }
         
-        return cell;
+
     }
     return nil;
 }
 
-
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    SW_FenquHeaderCell * header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"SW_FenquHeaderCell" forIndexPath:indexPath];
+    if (_dataArray.count && ([kind isEqualToString:UICollectionElementKindSectionHeader])) {
+        
+        NSDictionary * dic =  _dataArray[indexPath.section];
+        header.infoDic = dic;
+        
+        
+    }
+    
+    return header;
+}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+
+    
+    SW_VideoViewController * vc = [[SW_VideoViewController alloc]init];
+    NSArray * array = _dataArray[indexPath.section][@"body"];
+    vc.paramCode =array[indexPath.row][@"param"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
     
     
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 6;
+    return _dataArray.count;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 4;
     
     
+}
+
+//返回头headerView的大小
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    
+    return CGSizeMake(SCREEN_WIDTH, 30);
 }
 
 

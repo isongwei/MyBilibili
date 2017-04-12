@@ -10,6 +10,21 @@
 #define BilibiliURL_h
 
 
+//分区上部
+
+#define fenquHeader_URL @"https://app.bilibili.com/x/v2/region?access_key=37200d3f391844f1fed489c5c2747fa2&actionKey=appkey&appkey=27eb53fc9058f8c3&build=4250&device=phone&mobi_app=iphone&platform=ios&sign=913fde4bc3d1fafcf6eb2b9341cb85ea&ts=1490713051"
+
+//分区所有
+
+#define fenquAll_URL @"https://app.bilibili.com/x/v2/show/region?access_key=37200d3f391844f1fed489c5c2747fa2&actionKey=appkey&appkey=27eb53fc9058f8c3&build=4250&channel=appstore&device=phone&mobi_app=iphone&platform=ios&sign=a3283bf1166d340ccc3f9fe4fe473f40&ts=1490429540&warm=0"
+
+
+
+
+
+#pragma mark - ================================
+
+
 //直播
 #define zhibo_URL @"https://live.bilibili.com/mobile/home?actionKey=appkey&appkey=27eb53fc9058f8c3&build=2310&device=phone&platform=ios&scale=3&sign=ee8feee672ee037e2994adb9faa2f77e&ts=1466676873"
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SW_TuijianCollectionViewCell" reuseIdentifier="SW_TuijianCollectionViewCell" id="gTV-IL-0wX" customClass="SW_TuijianCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="291"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="291"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eRP-ix-uXA">
+                        <rect key="frame" x="0.0" y="0.0" width="383" height="230"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="eRP-ix-uXA" secondAttribute="height" multiplier="5/3" id="Fly-He-9n7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大的萨达的萨达萨达" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-9J-bLf">
+                        <rect key="frame" x="0.0" y="240" width="383" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="Y8u-KE-la0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TYd-9J-bLf" secondAttribute="trailing" id="4T7-8A-uMa"/>
+                <constraint firstAttribute="trailing" secondItem="eRP-ix-uXA" secondAttribute="trailing" id="IPH-hR-JXP"/>
+                <constraint firstItem="TYd-9J-bLf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P84-WZ-hSj"/>
+                <constraint firstItem="eRP-ix-uXA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mwg-IS-DHM"/>
+                <constraint firstItem="TYd-9J-bLf" firstAttribute="top" secondItem="eRP-ix-uXA" secondAttribute="bottom" constant="10" id="v2o-Oo-ZoJ"/>
+                <constraint firstItem="eRP-ix-uXA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vs2-Qj-sWL"/>
+            </constraints>
+            <size key="customSize" width="383" height="291"/>
+            <connections>
+                <outlet property="imageView" destination="eRP-ix-uXA" id="zAQ-BQ-NDD"/>
+                <outlet property="title" destination="TYd-9J-bLf" id="VT7-yY-EMv"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="29"/>
+        </collectionViewCell>
+    </objects>
+</document>
